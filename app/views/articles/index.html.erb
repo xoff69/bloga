@@ -1,1 +1,15 @@
-coucou
+index des articles
+<table>
+
+<% @articles.each do |article|%>
+<tr>
+    <td><strong><%= article.title%></strong></td>
+    <td><%= article.content%></td>
+   
+     <td><%= link_to "Show", article%></td>
+     <td><%= link_to "Edit", edit_article_path(article) %></td>
+      <td><%= button_to "Delete", article, method: :delete%></td>
+</tr>
+<% end %>
+</table>
+<%= link_to "new", new_article_path%>
