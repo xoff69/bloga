@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   root "articles#index"  #car root est un point d acces particuler
 # on peut mettre resources :articles a la place de tout ca
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
   # get "/articles/new", to: "articles#new"
   
   # get "/articles", to: "articles#index"
